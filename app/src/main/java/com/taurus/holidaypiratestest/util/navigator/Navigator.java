@@ -2,6 +2,7 @@ package com.taurus.holidaypiratestest.util.navigator;
 
 import android.app.Activity;
 import com.taurus.holidaypiratestest.core.injection.ActivityScope;
+import com.taurus.holidaypiratestest.postdetail.PostDetailActivity;
 
 @ActivityScope
 public class Navigator {
@@ -12,4 +13,7 @@ public class Navigator {
         this.activity = activity;
     }
 
+  public Navigation toPostDetailActivity(int userId) {
+    return new Navigation(activity, PostDetailActivity.newIntent(activity, userId));
+  }
 }

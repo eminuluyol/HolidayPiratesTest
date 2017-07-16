@@ -4,10 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+
 import android.view.View;
 import butterknife.BindView;
 import com.taurus.holidaypiratestest.R;
@@ -17,9 +14,10 @@ import com.taurus.holidaypiratestest.core.BaseFragment;
 import com.taurus.holidaypiratestest.customview.EndlessRecyclerView;
 import com.taurus.holidaypiratestest.listener.OnItemClickListener;
 import com.taurus.holidaypiratestest.userpost.adapter.UserPostAdapterDelegate;
+import com.taurus.holidaypiratestest.userpost.adapter.UserPostUIModel;
 import java.util.List;
 
-import static android.R.attr.key;
+
 
 /**
  * Created by eminuluyol on 16/07/2017.
@@ -79,5 +77,7 @@ public class UserPostFragment extends BaseFragment<UserPostView, UserPostPresent
   @Override
   public void onItemClick(View view) {
 
+    UserPostUIModel userPostUIModel = (UserPostUIModel) view.getTag();
+    getPresenter().onPostDetailRequested(userPostUIModel.getUserId());
   }
 }

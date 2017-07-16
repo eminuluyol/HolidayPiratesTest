@@ -1,5 +1,6 @@
 package com.taurus.holidaypiratestest.userpost;
 
+import com.taurus.holidaypiratestest.R;
 import com.taurus.holidaypiratestest.baseadapter.model.GenericItem;
 import com.taurus.holidaypiratestest.core.BasePresenter;
 import com.taurus.holidaypiratestest.core.injection.Injector;
@@ -103,5 +104,10 @@ public class UserPostPresenter extends BasePresenter<UserPostView> {
     model.setBody(item.getBody());
 
     return model;
+  }
+
+  void onPostDetailRequested(int userId) {
+    getNavigator().toPostDetailActivity(userId).withAnimation(R.anim.right_in, R.anim.left_out).navigate();
+
   }
 }
