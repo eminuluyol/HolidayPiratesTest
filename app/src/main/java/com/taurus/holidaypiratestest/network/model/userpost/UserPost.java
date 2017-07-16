@@ -2,6 +2,10 @@ package com.taurus.holidaypiratestest.network.model.userpost;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.taurus.holidaypiratestest.userpost.adapter.UserPostUIModel;
+import com.taurus.holidaypiratestest.util.ListConverter;
+import java.util.List;
+import retrofit2.Response;
 
 /**
  * Created by eminuluyol on 16/07/2017.
@@ -56,5 +60,6 @@ public class UserPost {
   public void setBody(String body) {
     this.body = body;
   }
+
 
 }

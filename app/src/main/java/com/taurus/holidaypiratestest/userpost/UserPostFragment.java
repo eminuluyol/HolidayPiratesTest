@@ -15,14 +15,18 @@ import com.taurus.holidaypiratestest.baseadapter.RecyclerAdapter;
 import com.taurus.holidaypiratestest.baseadapter.model.GenericItem;
 import com.taurus.holidaypiratestest.core.BaseFragment;
 import com.taurus.holidaypiratestest.customview.EndlessRecyclerView;
+import com.taurus.holidaypiratestest.listener.OnItemClickListener;
+import com.taurus.holidaypiratestest.userpost.adapter.UserPostAdapterDelegate;
 import java.util.List;
+
+import static android.R.attr.key;
 
 /**
  * Created by eminuluyol on 16/07/2017.
  */
 
 public class UserPostFragment extends BaseFragment<UserPostView, UserPostPresenter>
-    implements UserPostView, EndlessRecyclerView.OnEndReachedListener {
+    implements UserPostView, EndlessRecyclerView.OnEndReachedListener, OnItemClickListener {
 
   @BindView(R.id.userPostsRecyclerView)
   EndlessRecyclerView userPostsRecyclerView;
@@ -30,7 +34,7 @@ public class UserPostFragment extends BaseFragment<UserPostView, UserPostPresent
   @BindView(R.id.emptyView)
   NestedScrollView emptyView;
 
-  private RecyclerAdapter userPostsArticlesAdapter;
+  private RecyclerAdapter userPostsAdapter;
 
   public static UserPostFragment newInstance() {
     return new UserPostFragment();
@@ -50,16 +54,30 @@ public class UserPostFragment extends BaseFragment<UserPostView, UserPostPresent
   public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
 
-    getPresenter().onProgressBarShow();
     getPresenter().onUserPostRequested();
 
     userPostsRecyclerView.setOnEndReachedListener(this);
     userPostsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-    userPostsArticlesAdapter = RecyclerAdapter.with(new UserPostAdapterDelegate());
-    userPostsRecyclerView.setAdapter(userPostsArticlesAdapter);
+    userPostsAdapter = RecyclerAdapter.with(new UserPostAdapterDelegate(this));
+    userPostsRecyclerView.setAdapter(userPostsAdapter);
     userPostsRecyclerView.setLoading(false);
 
   }
 
+  @Override
+  public void showGetUserPostSuccess(List<GenericItem> postList) {
+    userPostsRecyclerView.setLoading(false);
+    userPostsAdapter.addAll(postList);
+  }
 
+  @Override
+  public void onEndReached() {
+    userPostsRecyclerView.setLoading(true);
+    getPresenter().onUserPostRequested();
+  }
+
+  @Override
+  public void onItemClick(View view) {
+
+  }
 }

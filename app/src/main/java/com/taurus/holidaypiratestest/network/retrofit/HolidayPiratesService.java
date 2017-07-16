@@ -12,8 +12,8 @@ public interface HolidayPiratesService {
 
   @GET("posts")
   Flowable<Response<List<UserPost>>> getUserPosts(
-      @Query("_page") int page,
-      @Path("_limit") int limit
+      @Query("_start") int page,
+      @Query("_limit") int limit
   );
 
 }
