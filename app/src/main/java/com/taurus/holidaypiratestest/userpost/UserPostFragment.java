@@ -78,6 +78,6 @@ public class UserPostFragment extends BaseFragment<UserPostView, UserPostPresent
   public void onItemClick(View view) {
 
     UserPostUIModel userPostUIModel = (UserPostUIModel) view.getTag();
-    getPresenter().onPostDetailRequested(userPostUIModel.getUserId());
+    getPresenter().onPostDetailRequested(userPostUIModel.getUserId(), userPostUIModel.getId());
   }
 }

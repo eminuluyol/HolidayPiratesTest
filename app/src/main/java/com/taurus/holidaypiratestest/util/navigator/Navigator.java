@@ -13,7 +13,7 @@ public class Navigator {
         this.activity = activity;
     }
 
-  public Navigation toPostDetailActivity(int userId) {
-    return new Navigation(activity, PostDetailActivity.newIntent(activity, userId));
+  public Navigation toPostDetailActivity(int userId, int postId) {
+    return new Navigation(activity, PostDetailActivity.newIntent(activity, userId, postId));
   }
 }

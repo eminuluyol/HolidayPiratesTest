@@ -16,12 +16,15 @@ import com.taurus.holidaypiratestest.userpost.UserPostFragment;
 public class PostDetailActivity extends BaseSimpleActivity {
 
   private final static String EXTRA_USER_ID = "user_id";
+  private final static String EXTRA_POST_ID = "post_id";
   private int userId;
+  private int postId;
 
-  public static Intent newIntent(Activity activity, int userId) {
+  public static Intent newIntent(Activity activity, int userId, int postId) {
 
     Intent intent = new Intent(activity, PostDetailActivity.class);
     intent.putExtra(PostDetailActivity.EXTRA_USER_ID, userId);
+    intent.putExtra(PostDetailActivity.EXTRA_POST_ID, postId);
 
     return intent;
   }
@@ -29,7 +32,7 @@ public class PostDetailActivity extends BaseSimpleActivity {
   @Nullable
   @Override
   protected BaseFragment getContainedFragment() {
-    return PostDetailFragmentBuilder.newPostDetailFragment(userId);
+    return PostDetailFragmentBuilder.newPostDetailFragment(userId, postId);
   }
 
   @Override
@@ -49,6 +52,7 @@ public class PostDetailActivity extends BaseSimpleActivity {
 
     if (extras != null) {
       userId = extras.getIntExtra(PostDetailActivity.EXTRA_USER_ID, 0);
+      postId = extras.getIntExtra(PostDetailActivity.EXTRA_POST_ID, 0);
     }
 
   }

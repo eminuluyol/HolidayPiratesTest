@@ -22,7 +22,7 @@ import retrofit2.http.Header;
 
 public class UserPostPresenter extends BasePresenter<UserPostView> {
 
-  private int PAGE_NUMBER = 1;
+  private int PAGE_NUMBER = 0;
   private int PAGE_LIMIT = 10;
   private String TOTAL_COUNT = "X-Total-Count";
   private int totalCount = Integer.MAX_VALUE;
@@ -49,7 +49,7 @@ public class UserPostPresenter extends BasePresenter<UserPostView> {
 
   void onUserPostRequested() {
 
-    if( (PAGE_LIMIT * PAGE_NUMBER) <= totalCount) {
+    if( PAGE_NUMBER <= totalCount) {
 
       if(isViewAttached()) {
         onProgressBarShow();
@@ -67,7 +67,7 @@ public class UserPostPresenter extends BasePresenter<UserPostView> {
 
   private void handleResponse(Response<List<UserPost>> listResponse) {
 
-    PAGE_NUMBER++;
+    PAGE_NUMBER = PAGE_NUMBER + PAGE_LIMIT;
 
     if(isViewAttached()) {
       onProgressBarHide();
@@ -106,8 +106,8 @@ public class UserPostPresenter extends BasePresenter<UserPostView> {
     return model;
   }
 
-  void onPostDetailRequested(int userId) {
-    getNavigator().toPostDetailActivity(userId).withAnimation(R.anim.right_in, R.anim.left_out).navigate();
+  void onPostDetailRequested(int userId, int postId) {
+    getNavigator().toPostDetailActivity(userId, postId).withAnimation(R.anim.right_in, R.anim.left_out).navigate();
 
   }
 }

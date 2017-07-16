@@ -33,6 +33,10 @@ public class PostDetailFragment extends BaseFragment<PostDetailView, PostDetailP
   @Arg
   int userId;
 
+  @Arg
+  int postId;
+
+
   private RecyclerAdapter postDetailAdapter;
 
   @Override
