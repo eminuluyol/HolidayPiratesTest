@@ -2,6 +2,11 @@ package com.taurus.holidaypiratestest.network.model.postdetail.photo;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.taurus.holidaypiratestest.network.model.postdetail.userdata.UserData;
+import com.taurus.holidaypiratestest.postdetail.adapter.model.PhotosUIModel;
+import com.taurus.holidaypiratestest.postdetail.adapter.model.UserDataUIModel;
+import com.taurus.holidaypiratestest.util.ListConverter;
+import java.util.List;
 
 /**
  * Created by eminuluyol on 16/07/2017.
@@ -63,6 +68,19 @@ public class PhotoData {
 
   public void setThumbnailUrl(String thumbnailUrl) {
     this.thumbnailUrl = thumbnailUrl;
+  }
+
+  public static List<PhotosUIModel> createList(List<PhotoData> photoList) {
+    return ListConverter.convert(photoList, item -> create(item));
+  }
+
+  private static PhotosUIModel create(PhotoData item) {
+
+    final PhotosUIModel model = new PhotosUIModel();
+
+    model.setUrl(item.getUrl());
+
+    return model;
   }
 
 }

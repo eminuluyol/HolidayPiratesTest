@@ -90,7 +90,7 @@ public class UserPostPresenter extends BasePresenter<UserPostView> {
 
   }
 
-  public static List<UserPostUIModel> createList(Response<List<UserPost>> userPostList) {
+  private List<UserPostUIModel> createList(Response<List<UserPost>> userPostList) {
     return ListConverter.convert(userPostList.body(), item -> create(item));
   }
 
@@ -110,4 +110,5 @@ public class UserPostPresenter extends BasePresenter<UserPostView> {
     getNavigator().toPostDetailActivity(userId, postId).withAnimation(R.anim.right_in, R.anim.left_out).navigate();
 
   }
+
 }

@@ -2,6 +2,8 @@ package com.taurus.holidaypiratestest.postdetail.adapter.delegate;
 
 import android.support.annotation.NonNull;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import butterknife.BindView;
 import com.taurus.holidaypiratestest.R;
 import com.taurus.holidaypiratestest.baseadapter.BaseAdapterDelegate;
 import com.taurus.holidaypiratestest.baseadapter.model.GenericItem;
@@ -13,8 +15,8 @@ import java.util.List;
  * Created by eminuluyol on 16/07/2017.
  */
 
-public class CommentsAdapterDelegate extends
-    BaseAdapterDelegate<CommentsUIModel, GenericItem, CommentsViewHolder> {
+public class CommentsAdapterDelegate
+    extends BaseAdapterDelegate<CommentsUIModel, GenericItem, CommentsViewHolder> {
 
   @Override
   protected boolean isForViewType(@NonNull GenericItem item, @NonNull List<GenericItem> items,
@@ -22,14 +24,11 @@ public class CommentsAdapterDelegate extends
     return item instanceof CommentsUIModel;
   }
 
-  @NonNull
-  @Override
-  protected CommentsViewHolder onCreateViewHolder(@NonNull ViewGroup parent) {
+  @NonNull @Override protected CommentsViewHolder onCreateViewHolder(@NonNull ViewGroup parent) {
     return new CommentsViewHolder(parent, R.layout.list_item_comments);
   }
 
-  @Override
-  protected void onBindViewHolder(@NonNull CommentsUIModel item,
+  @Override protected void onBindViewHolder(@NonNull CommentsUIModel item,
       @NonNull CommentsViewHolder viewHolder, @NonNull List<Object> payloads) {
     viewHolder.bind(item);
   }

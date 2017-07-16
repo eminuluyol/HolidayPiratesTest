@@ -10,8 +10,14 @@ import com.hannesdorfmann.fragmentargs.annotation.Arg;
 import com.hannesdorfmann.fragmentargs.annotation.FragmentWithArgs;
 import com.taurus.holidaypiratestest.R;
 import com.taurus.holidaypiratestest.baseadapter.RecyclerAdapter;
+import com.taurus.holidaypiratestest.baseadapter.model.GenericItem;
 import com.taurus.holidaypiratestest.core.BaseFragment;
 import com.taurus.holidaypiratestest.customview.EndlessRecyclerView;
+import com.taurus.holidaypiratestest.postdetail.adapter.delegate.CommentsAdapterDelegate;
+import com.taurus.holidaypiratestest.postdetail.adapter.delegate.PhotosAdapterDelegate;
+import com.taurus.holidaypiratestest.postdetail.adapter.delegate.UserDataAdapterDelegate;
+import com.taurus.holidaypiratestest.postdetail.adapter.model.CommentsUIModel;
+import java.util.List;
 
 import static com.taurus.holidaypiratestest.R.id.postDetailRecyclerView;
 import static com.taurus.holidaypiratestest.R.id.userPostsRecyclerView;
@@ -36,7 +42,6 @@ public class PostDetailFragment extends BaseFragment<PostDetailView, PostDetailP
   @Arg
   int postId;
 
-
   private RecyclerAdapter postDetailAdapter;
 
   @Override
@@ -53,20 +58,37 @@ public class PostDetailFragment extends BaseFragment<PostDetailView, PostDetailP
   public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
 
-    getPresenter().onPostDetailRequested();
+    getPresenter().onPostDetailRequested(userId, postId);
 
     postDetailRecyclerView.setOnEndReachedListener(this);
     postDetailRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-    postDetailAdapter = RecyclerAdapter.with();
+
+    postDetailAdapter = RecyclerAdapter.with(
+        new UserDataAdapterDelegate(),
+        new PhotosAdapterDelegate(),
+        new CommentsAdapterDelegate()
+    );
+
     postDetailRecyclerView.setAdapter(postDetailAdapter);
     postDetailRecyclerView.setLoading(false);
 
   }
 
   @Override
-  public void onEndReached() {
-    postDetailRecyclerView.setLoading(true);
-    getPresenter().onPostDetailRequested();
+  public void showGetDetailSuccess(List<GenericItem> detailList) {
+    postDetailRecyclerView.setLoading(false);
+    postDetailAdapter.swapItems(detailList);
   }
 
+  @Override
+  public void showGetCommentSuccess(List<GenericItem> comments) {
+    postDetailRecyclerView.setLoading(false);
+    postDetailAdapter.addAll(comments);
+  }
+
+  @Override
+  public void onEndReached() {
+    postDetailRecyclerView.setLoading(true);
+    getPresenter().onPostDetailRequested(userId, postId);
+  }
 }

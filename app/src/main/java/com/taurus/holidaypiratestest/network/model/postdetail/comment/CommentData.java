@@ -2,6 +2,11 @@ package com.taurus.holidaypiratestest.network.model.postdetail.comment;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.taurus.holidaypiratestest.network.model.postdetail.photo.PhotoData;
+import com.taurus.holidaypiratestest.postdetail.adapter.model.CommentsUIModel;
+import com.taurus.holidaypiratestest.postdetail.adapter.model.PhotosUIModel;
+import com.taurus.holidaypiratestest.util.ListConverter;
+import java.util.List;
 
 /**
  * Created by eminuluyol on 16/07/2017.
@@ -64,5 +69,6 @@ public class CommentData {
   public void setBody(String body) {
     this.body = body;
   }
+
 
 }

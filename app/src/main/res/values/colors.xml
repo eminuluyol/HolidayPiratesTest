@@ -6,6 +6,7 @@
 
     <color name="colorMainDark">#071C24</color>
     <color name="colorMainDarkDark">#041116</color>
+    <color name="colorMainDarkAlpha">#80071C24</color>
     <color name="white">#FFFFFF</color>
     <color name="gray">#898E91</color>
     <color name="dirty_white">#E4F2F4</color>
