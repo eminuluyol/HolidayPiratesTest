@@ -40,7 +40,7 @@ public class PostDetailActivity extends BaseSimpleActivity {
     getBundleArgmuments();
     super.onCreate(savedInstanceState);
 
-    setTitle(R.string.user_posts);
+    setTitle(R.string.detail_view);
     setHomeAsUpEnabled(true);
     setTitleTextColor(getResources().getColor(R.color.white));
 

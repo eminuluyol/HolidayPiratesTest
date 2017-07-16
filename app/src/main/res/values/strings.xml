@@ -1,7 +1,12 @@
 <resources>
   <string name="app_name">Holiday Pirates Test</string>
   <string name="empty_generic_text">NO DATA</string>
+
+  <!-- USER POST -->
   <string name="user_posts">User Posts</string>
+
+  <!-- DETAIL VIEW -->
+  <string name="detail_view">Detail View</string>
   <string name="user_name">User Name:</string>
   <string name="name">Name:</string>
   <string name="email">E-Mail:</string>
@@ -9,4 +14,5 @@
   <string name="phone">Phone</string>
   <string name="website">Website:</string>
   <string name="company">Company:</string>
+
 </resources>
