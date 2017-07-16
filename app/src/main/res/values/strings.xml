@@ -1,3 +1,12 @@
 <resources>
-  <string name="app_name">HolidayPiratesTest</string>
+  <string name="app_name">Trivage Test</string>
+  <string name="empty_generic_text">NO DATA</string>
+  <string name="user_posts">User Posts</string>
+  <string name="user_name">User Name:</string>
+  <string name="name">Name:</string>
+  <string name="email">E-Mail:</string>
+  <string name="address">Address:</string>
+  <string name="phone">Phone</string>
+  <string name="website">Website:</string>
+  <string name="company">Company:</string>
 </resources>

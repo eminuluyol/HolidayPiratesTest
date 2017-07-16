@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/space_default"
+    android:paddingStart="@dimen/space_default"
+    android:paddingLeft="@dimen/space_default"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/commentTextViewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/space_medium"
+        android:textAppearance="@style/TextStyle.20.Black.Bold"/>
+
+    <TextView
+        android:id="@+id/commentTextViewEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/space_small"
+        android:textAppearance="@style/TextStyle.14.Black54"/>
+
+    <TextView
+        android:id="@+id/commentTextViewBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/space_medium"
+        android:textAppearance="@style/TextStyle.14.Black54"/>
+
+  </LinearLayout>
