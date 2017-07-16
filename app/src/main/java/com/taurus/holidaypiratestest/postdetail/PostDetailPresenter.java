@@ -124,9 +124,7 @@ public class PostDetailPresenter extends BasePresenter<PostDetailView> {
 
     PAGE_NUMBER = PAGE_NUMBER + PAGE_LIMIT;
 
-    if(isViewAttached()) {
-      onProgressBarHide();
-    }
+    onProgressBarHide();
 
     Headers header = listResponse.headers();
     totalCount = Integer.parseInt(header.get(TOTAL_COUNT));
@@ -160,6 +158,7 @@ public class PostDetailPresenter extends BasePresenter<PostDetailView> {
     model.setBody(item.getBody());
 
     return model;
+
   }
 
 }

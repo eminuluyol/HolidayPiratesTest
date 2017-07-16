@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import butterknife.BindView;
+import com.bumptech.glide.Glide;
 import com.taurus.holidaypiratestest.R;
 import com.taurus.holidaypiratestest.baseadapter.viewholder.BaseViewHolder;
 import com.taurus.holidaypiratestest.postdetail.adapter.model.PhotosUIModel;

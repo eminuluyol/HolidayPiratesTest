@@ -32,7 +32,7 @@ public class PostDetailActivity extends BaseSimpleActivity {
   @Nullable
   @Override
   protected BaseFragment getContainedFragment() {
-    return PostDetailFragmentBuilder.newPostDetailFragment(userId, postId);
+    return PostDetailFragmentBuilder.newPostDetailFragment(postId, userId);
   }
 
   @Override
