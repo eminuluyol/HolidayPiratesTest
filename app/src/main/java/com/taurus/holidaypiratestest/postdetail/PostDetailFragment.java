@@ -13,6 +13,9 @@ import com.taurus.holidaypiratestest.baseadapter.RecyclerAdapter;
 import com.taurus.holidaypiratestest.core.BaseFragment;
 import com.taurus.holidaypiratestest.customview.EndlessRecyclerView;
 
+import static com.taurus.holidaypiratestest.R.id.postDetailRecyclerView;
+import static com.taurus.holidaypiratestest.R.id.userPostsRecyclerView;
+
 /**
  * Created by eminuluyol on 16/07/2017.
  */
@@ -58,7 +61,8 @@ public class PostDetailFragment extends BaseFragment<PostDetailView, PostDetailP
 
   @Override
   public void onEndReached() {
-
+    postDetailRecyclerView.setLoading(true);
+    getPresenter().onPostDetailRequested();
   }
 
 }

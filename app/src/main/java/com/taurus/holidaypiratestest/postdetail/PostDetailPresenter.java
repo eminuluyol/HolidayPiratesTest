@@ -9,6 +9,11 @@ import com.taurus.holidaypiratestest.core.injection.Injector;
 
 public class PostDetailPresenter extends BasePresenter<PostDetailView> {
 
+  private int PAGE_NUMBER = 1;
+  private int PAGE_LIMIT = 10;
+  private String TOTAL_COUNT = "X-Total-Count";
+  private int totalCount = Integer.MAX_VALUE;
+
   PostDetailPresenter() {
     Injector.getInstance().getActivityComponent().inject(this);
   }
@@ -30,6 +35,10 @@ public class PostDetailPresenter extends BasePresenter<PostDetailView> {
   }
 
   void onPostDetailRequested() {
+
+    if(isViewAttached()) {
+      onProgressBarShow();
+    }
 
   }
 }
