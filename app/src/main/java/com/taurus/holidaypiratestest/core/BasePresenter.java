@@ -2,6 +2,7 @@ package com.taurus.holidaypiratestest.core;
 
 import android.app.Application;
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
+import com.taurus.holidaypiratestest.util.navigator.Navigator;
 import io.reactivex.disposables.CompositeDisposable;
 import javax.inject.Inject;
 
@@ -14,8 +15,7 @@ public abstract class BasePresenter<V extends BaseView> extends MvpBasePresenter
   @Inject
   Application application;
 
-  @Inject
-  Navigator navigator;
+  @Inject Navigator navigator;
 
   protected CompositeDisposable compositeDisposable;
 

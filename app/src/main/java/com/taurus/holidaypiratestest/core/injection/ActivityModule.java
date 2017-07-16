@@ -2,6 +2,7 @@ package com.taurus.holidaypiratestest.core.injection;
 
 import android.support.v7.app.AppCompatActivity;
 
+import com.taurus.holidaypiratestest.util.navigator.Navigator;
 import dagger.Module;
 import dagger.Provides;
 

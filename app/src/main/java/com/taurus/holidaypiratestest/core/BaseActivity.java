@@ -30,6 +30,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.hannesdorfmann.mosby.mvp.MvpActivity;
 import com.taurus.holidaypiratestest.R;
+import com.taurus.holidaypiratestest.core.dialog.ProgressDialogFragment;
+import com.taurus.holidaypiratestest.core.dialog.ProgressDialogFragmentBuilder;
+import com.taurus.holidaypiratestest.core.injection.Injector;
 import java.util.Arrays;
 
 /**

@@ -13,6 +13,8 @@ import butterknife.ButterKnife;
 import com.hannesdorfmann.fragmentargs.FragmentArgs;
 import com.hannesdorfmann.mosby.mvp.MvpFragment;
 import com.taurus.holidaypiratestest.R;
+import com.taurus.holidaypiratestest.core.dialog.ProgressDialogFragment;
+import com.taurus.holidaypiratestest.core.dialog.ProgressDialogFragmentBuilder;
 
 /**
  * Created by eminuluyol on 09/07/2017.

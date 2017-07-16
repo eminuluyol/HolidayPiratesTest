@@ -1,4 +1,5 @@
 <resources>
   <string name="app_name">Trivage Test</string>
   <string name="empty_generic_text">NO DATA</string>
+  <string name="user_posts">User Posts</string>
 </resources>

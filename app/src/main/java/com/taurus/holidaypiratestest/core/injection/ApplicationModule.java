@@ -1,7 +1,7 @@
 package com.taurus.holidaypiratestest.core.injection;
 
 import android.app.Application;
-import com.taurus.trivagotest.network.retrofit.RetrofitNewYorkTimesApi;
+
 import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;

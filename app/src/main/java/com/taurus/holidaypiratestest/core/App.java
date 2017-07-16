@@ -1,7 +1,7 @@
 package com.taurus.holidaypiratestest.core;
 
 import android.app.Application;
-import com.taurus.trivagotest.core.injection.Injector;
+import com.taurus.holidaypiratestest.core.injection.Injector;
 
 /**
  * Created by eminuluyol on 09/07/2017.
