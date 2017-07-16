@@ -2,8 +2,6 @@ package com.taurus.holidaypiratestest.core;
 
 import android.app.Application;
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
-import com.taurus.trivagotest.network.retrofit.RetrofitNewYorkTimesApi;
-import com.taurus.trivagotest.util.navigator.Navigator;
 import io.reactivex.disposables.CompositeDisposable;
 import javax.inject.Inject;
 
