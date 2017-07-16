@@ -69,5 +69,8 @@ dependencies {
   compile 'com.jakewharton:butterknife:8.5.1'
   annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
+  compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
+
+
   testCompile 'junit:junit:4.12'
 }
