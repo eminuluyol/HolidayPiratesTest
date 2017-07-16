@@ -2,6 +2,7 @@ package com.taurus.holidaypiratestest.core.injection;
 
 import android.app.Application;
 
+import com.taurus.holidaypiratestest.network.retrofit.RetrofitHolidayPiratesApi;
 import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;
@@ -19,6 +20,12 @@ public class ApplicationModule {
     @Singleton
     public Application provideApplication() {
         return application;
+    }
+
+    @Provides
+    @Singleton
+    public RetrofitHolidayPiratesApi provideHolidayPiratesApi() {
+        return new RetrofitHolidayPiratesApi();
     }
 
 }
