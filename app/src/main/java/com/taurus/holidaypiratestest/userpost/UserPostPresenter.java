@@ -28,4 +28,8 @@ public class UserPostPresenter extends BasePresenter<UserPostView> {
     }
 
   }
+
+  void onUserPostRequested() {
+
+  }
 }

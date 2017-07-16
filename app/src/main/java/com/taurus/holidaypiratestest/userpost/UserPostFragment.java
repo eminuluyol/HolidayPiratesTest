@@ -51,12 +51,12 @@ public class UserPostFragment extends BaseFragment<UserPostView, UserPostPresent
     super.onViewCreated(view, savedInstanceState);
 
     getPresenter().onProgressBarShow();
-    getPresenter().onMostViewArticlesRequestedRequested();
+    getPresenter().onUserPostRequested();
 
     userPostsRecyclerView.setOnEndReachedListener(this);
     userPostsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-    userPostsArticlesAdapter = RecyclerAdapter.with(new MostViewArticlesAdapterDelegate());
-    userPostsRecyclerView.setAdapter(mostViewedArticlesAdapter);
+    userPostsArticlesAdapter = RecyclerAdapter.with(new UserPostAdapterDelegate());
+    userPostsRecyclerView.setAdapter(userPostsArticlesAdapter);
     userPostsRecyclerView.setLoading(false);
 
   }
